@@ -1,0 +1,1 @@
+A weather chrome extension coded in vanilla javascript using the openWeatherMap API.
