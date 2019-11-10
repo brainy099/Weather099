@@ -1,0 +1,14 @@
+{
+    "name": "Weather099",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "A simple JS weather app",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "geolocation"
+    ]
+}
