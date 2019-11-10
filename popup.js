@@ -17,6 +17,23 @@ function searchWeather(searchTerm) {
     });
 }
 
+//find location and fetch API
+function locWeather(lat, lon) {
+  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${appId}&units=metric`;
+  let req = new Request(url, {
+    method: "get"
+  });
+  console.log(lat + " " + lon);
+  fetch(req)
+    .then(response => {
+      return response.json();
+    })
+    .then(jsonData => {
+      console.log(jsonData);
+      procResult(jsonData);
+    });
+}
+
 //process JSON result and render in the html page
 function procResult(jsonData) {
   switch (jsonData.weather[0].main) {
@@ -82,4 +99,17 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     searchWeather(searchTerm);
   }
 });
+
+//event handler for geolocation finder
+
+document.getElementById("locButton").addEventListener("click", () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+      locWeather(lat, lon);
+    });
+  }
+});
+
 //9ecb7fccb1d6a34924a1da7a298b3fb8

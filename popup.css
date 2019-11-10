@@ -51,6 +51,18 @@ body {
   color: #00897b;
 }
 
+#locButton {
+  width: 40px;
+  height: 36px;
+  border: 3px solid #00897b;
+  border-left: none;
+  background: #8f0505;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 #searchBtn {
   width: 40px;
   height: 36px;
