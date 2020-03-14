@@ -1,5 +1,5 @@
 //opnweathermap API key
-let appId = "7adb761c87aef4b3a7124530e48238dc";
+let appId = "..."; //insert your API Key here
 
 //search and fetch API call function
 function searchWeather(searchTerm) {
